@@ -24,18 +24,19 @@ class ViewController: NSViewController {
     @IBOutlet var textView: NSTextView!
     @IBOutlet weak var stop: NSButton!
     @IBOutlet weak var speak: NSButton!
+    @IBOutlet weak var progressBar: NSProgressIndicator!
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
+        
         speechSynthesizer.delegate = self
-        stop.enabled = false
+        speakEnabled(true)
     }
     
     @IBAction func speakButtonClicked(sender: NSButton) {
         
-        speak.enabled = false
-        stop.enabled = true
+        speakEnabled(false)
+        activateProgress(true)
         
         if let contents = textView.string where !contents.isEmpty {
             speechSynthesizer.startSpeakingString(contents)
@@ -47,15 +48,40 @@ class ViewController: NSViewController {
     @IBAction func stopButtonClicked(sender: NSButton) {
         
         speechSynthesizer.stopSpeaking()
+        activateProgress(false)
+    }
+    
+    private func speakEnabled(enabled: Bool) {
+        speak.enabled = enabled
+        stop.enabled = !enabled
+    }
+    
+    private func activateProgress(activate: Bool) {
+        if activate {
+            progressBar.startAnimation(self)
+        } else {
+            progressBar.stopAnimation(self)
+            progressBar.doubleValue = 0.0
+        }
     }
 }
 
 extension ViewController: NSSpeechSynthesizerDelegate {
-
+    
     func speechSynthesizer(sender: NSSpeechSynthesizer,
         didFinishSpeaking finishedSpeaking: Bool) {
             
-            speak.enabled = true
-            stop.enabled = false
+            speakEnabled(true)
+            activateProgress(false)
+    }
+    
+    func speechSynthesizer(sender: NSSpeechSynthesizer,
+        willSpeakWord characterRange: NSRange,
+        ofString string: String) {
+            
+            let characterCount = Double(string.characters.count)
+            let wordLength = (Double(characterRange.length) + 1)
+            let increment = (wordLength / characterCount) * 100
+            progressBar.incrementBy(increment)
     }
 }

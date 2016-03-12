@@ -721,19 +721,26 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
+                            <progressIndicator wantsLayer="YES" maxValue="100" displayedWhenStopped="NO" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="Q6K-rB-I7m">
+                                <rect key="frame" x="0.0" y="199" width="480" height="20"/>
+                            </progressIndicator>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="2KU-E6-sop" secondAttribute="trailing" id="F0s-r7-3W7"/>
                             <constraint firstItem="RbG-RZ-zBZ" firstAttribute="leading" secondItem="pli-qo-aRl" secondAttribute="trailing" constant="12" id="HZB-Ik-G7F"/>
                             <constraint firstItem="pli-qo-aRl" firstAttribute="baseline" secondItem="RbG-RZ-zBZ" secondAttribute="baseline" id="HlL-mD-ohW"/>
+                            <constraint firstItem="Q6K-rB-I7m" firstAttribute="leading" secondItem="ERx-hH-rdd" secondAttribute="leading" id="Lgu-Xr-mBD"/>
+                            <constraint firstAttribute="trailing" secondItem="Q6K-rB-I7m" secondAttribute="trailing" id="MlA-qw-l7N"/>
                             <constraint firstItem="RbG-RZ-zBZ" firstAttribute="top" secondItem="ERx-hH-rdd" secondAttribute="top" constant="20" id="N3Y-IY-4ss"/>
                             <constraint firstAttribute="bottom" secondItem="2KU-E6-sop" secondAttribute="bottom" id="RC6-3S-nWA"/>
+                            <constraint firstItem="2QI-45-GHg" firstAttribute="top" secondItem="Q6K-rB-I7m" secondAttribute="bottom" constant="-8" id="fOl-hE-hHm"/>
                             <constraint firstAttribute="trailing" secondItem="RbG-RZ-zBZ" secondAttribute="trailing" constant="20" id="fpM-SQ-Xt5"/>
                             <constraint firstItem="2KU-E6-sop" firstAttribute="leading" secondItem="ERx-hH-rdd" secondAttribute="leading" id="mrk-Dt-6VD"/>
                             <constraint firstItem="2KU-E6-sop" firstAttribute="top" secondItem="ERx-hH-rdd" secondAttribute="top" constant="61" id="rMg-pw-Y8V"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="progressBar" destination="Q6K-rB-I7m" id="qdC-kL-9yX"/>
                         <outlet property="speak" destination="RbG-RZ-zBZ" id="VQq-eA-7Qm"/>
                         <outlet property="stop" destination="pli-qo-aRl" id="nMq-LO-5f2"/>
                         <outlet property="textView" destination="2QI-45-GHg" id="yvv-ob-y6X"/>
