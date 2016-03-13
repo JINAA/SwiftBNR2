@@ -17,24 +17,19 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-     
+        
         tableView.registerClass(UITableViewCell.self,
             forCellReuseIdentifier: "Cell")
         tableView.dataSource = todoList
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
+    
     @IBAction func addButtonPressed(sender: UIButton) {
-        guard let text = itemTextField.text else {
+        guard let text = itemTextField.text where text != "" else {
             return
         }
         todoList.addItem(text)
+        itemTextField.text = ""
         tableView.reloadData()
     }
-
 }
 
