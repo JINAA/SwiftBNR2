@@ -32,3 +32,18 @@ class ViewController: UIViewController {
     }
 }
 
+extension ViewController: UITableViewDelegate {
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        let deleteIndex = indexPath.row
+        
+        todoList.removeItemAtIndex(deleteIndex)
+        
+        tableView.beginUpdates()
+        tableView.deleteRowsAtIndexPaths([indexPath],
+            withRowAnimation: UITableViewRowAnimation.Automatic)
+        tableView.endUpdates()
+
+    }
+}

@@ -42,6 +42,11 @@ class ToDoList: NSObject {
         items.append(item)
         saveItems()
     }
+    
+    func removeItemAtIndex(index: Int) {
+        items.removeAtIndex(index)
+        saveItems()
+    }
 }
 
 extension ToDoList: UITableViewDataSource {
