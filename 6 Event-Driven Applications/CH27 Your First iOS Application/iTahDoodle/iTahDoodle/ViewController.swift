@@ -18,12 +18,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.registerClass(UITableViewCell.self,
-            forCellReuseIdentifier: "Cell")
         tableView.dataSource = todoList
     }
     
     @IBAction func addButtonPressed(sender: UIButton) {
+        
         guard let text = itemTextField.text where text != "" else {
             return
         }
