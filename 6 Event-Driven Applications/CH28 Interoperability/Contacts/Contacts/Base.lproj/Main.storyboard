@@ -96,9 +96,18 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mdE-Au-dPr">
+                                <rect key="frame" x="180" y="180" width="240" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="1cs-4t-z88"/>
+                                    <constraint firstAttribute="width" constant="240" id="Rfl-7l-3M5"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="mdE-Au-dPr" firstAttribute="centerY" secondItem="f2R-cg-2th" secondAttribute="centerY" id="OWP-TZ-iwc"/>
+                            <constraint firstItem="mdE-Au-dPr" firstAttribute="centerX" secondItem="f2R-cg-2th" secondAttribute="centerX" id="YCl-Be-zhd"/>
                             <constraint firstItem="LCa-m0-fVv" firstAttribute="trailing" secondItem="f2R-cg-2th" secondAttribute="trailingMargin" id="Zy1-N5-D6S"/>
                             <constraint firstItem="LCa-m0-fVv" firstAttribute="top" secondItem="xEo-lc-TH7" secondAttribute="bottom" id="eUE-ZR-a8i"/>
                             <constraint firstItem="LCa-m0-fVv" firstAttribute="leading" secondItem="f2R-cg-2th" secondAttribute="leadingMargin" id="gB9-J1-4db"/>
@@ -117,6 +126,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="contactImageView" destination="mdE-Au-dPr" id="ryE-sA-jWx"/>
                         <outlet property="firstNameTextField" destination="qQ0-td-sKU" id="0oO-hO-M2A"/>
                         <outlet property="lastNameTextField" destination="Ien-0s-tb6" id="2ag-Lj-nRA"/>
                     </connections>

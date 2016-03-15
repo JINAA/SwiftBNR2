@@ -19,12 +19,7 @@
 
 - (id) initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
-    if (self) {
-        // NSArray *contactArray = @[@"Johnny Appleseed", @"Paul Bunyan", @"Calamity Jane"];
-//        Contact *c1 = [[Contact alloc] initWithContactName:@"Johnny Appleseed"];
-//        Contact *c2 = [[Contact alloc] initWithContactName:@"Paul Bunyan"];
-//        Contact *c3 = [[Contact alloc] initWithContactName:@"Calamity Jane"];
-//        
+    if (self) {  
         _contacts = [NSMutableArray array];
     }
     return self;

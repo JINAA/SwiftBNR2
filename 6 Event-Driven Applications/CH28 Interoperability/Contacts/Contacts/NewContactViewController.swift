@@ -12,11 +12,12 @@ class NewContactViewController: UIViewController {
 
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
+    @IBOutlet weak var contactImageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        contactImageView.image = DefaultImage.generateDefaultImageOfSize(contactImageView.frame.size)
     }
 
     override func didReceiveMemoryWarning() {
