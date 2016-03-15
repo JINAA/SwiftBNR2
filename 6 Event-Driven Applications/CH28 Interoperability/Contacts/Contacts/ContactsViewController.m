@@ -7,6 +7,7 @@
 //
 
 #import "ContactsViewController.h"
+#import "Contacts-Swift.h"
 
 @interface ContactsViewController ()
 
@@ -19,8 +20,12 @@
 - (id) initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
     if (self) {
-        NSArray *contactArray = @[@"Johnny Appleseed", @"Paul Bunyan", @"Calamity Jane"];
-        _contacts = [NSMutableArray arrayWithArray:contactArray];
+        // NSArray *contactArray = @[@"Johnny Appleseed", @"Paul Bunyan", @"Calamity Jane"];
+        Contact *c1 = [[Contact alloc] initWithContactName:@"Johnny Appleseed"];
+        Contact *c2 = [[Contact alloc] initWithContactName:@"Paul Bunyan"];
+        Contact *c3 = [[Contact alloc] initWithContactName:@"Calamity Jane"];
+        
+        _contacts = [NSMutableArray arrayWithArray: @[c1, c2, c3]];
     }
     return self;
 }
@@ -37,8 +42,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell" forIndexPath:indexPath];
-    NSString *contact = self.contacts[indexPath.row];
-    cell.textLabel.text = contact;
+    Contact *contact = self.contacts[indexPath.row];
+    cell.textLabel.text = contact.name;
     return cell;
 }
 
