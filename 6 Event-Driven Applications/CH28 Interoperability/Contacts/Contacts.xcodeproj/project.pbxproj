@@ -9,11 +9,11 @@
 /* Begin PBXBuildFile section */
 		ECB954881C975D7200C82CE1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ECB954871C975D7200C82CE1 /* main.m */; };
 		ECB9548B1C975D7200C82CE1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ECB9548A1C975D7200C82CE1 /* AppDelegate.m */; };
-		ECB9548E1C975D7200C82CE1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECB9548D1C975D7200C82CE1 /* ViewController.m */; };
 		ECB954911C975D7200C82CE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECB9548F1C975D7200C82CE1 /* Main.storyboard */; };
 		ECB954931C975D7200C82CE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECB954921C975D7200C82CE1 /* Assets.xcassets */; };
 		ECB954961C975D7200C82CE1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECB954941C975D7200C82CE1 /* LaunchScreen.storyboard */; };
 		ECB954A11C975D7200C82CE1 /* ContactsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ECB954A01C975D7200C82CE1 /* ContactsTests.m */; };
+		ECB954BF1C986BF400C82CE1 /* ContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECB954BE1C986BF400C82CE1 /* ContactsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,8 +31,6 @@
 		ECB954871C975D7200C82CE1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		ECB954891C975D7200C82CE1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		ECB9548A1C975D7200C82CE1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		ECB9548C1C975D7200C82CE1 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		ECB9548D1C975D7200C82CE1 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		ECB954901C975D7200C82CE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ECB954921C975D7200C82CE1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ECB954951C975D7200C82CE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -40,6 +38,8 @@
 		ECB9549C1C975D7200C82CE1 /* ContactsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ContactsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECB954A01C975D7200C82CE1 /* ContactsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContactsTests.m; sourceTree = "<group>"; };
 		ECB954A21C975D7200C82CE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ECB954BD1C986BF400C82CE1 /* ContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsViewController.h; sourceTree = "<group>"; };
+		ECB954BE1C986BF400C82CE1 /* ContactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,10 +81,10 @@
 		ECB954851C975D7200C82CE1 /* Contacts */ = {
 			isa = PBXGroup;
 			children = (
+				ECB954BD1C986BF400C82CE1 /* ContactsViewController.h */,
+				ECB954BE1C986BF400C82CE1 /* ContactsViewController.m */,
 				ECB954891C975D7200C82CE1 /* AppDelegate.h */,
 				ECB9548A1C975D7200C82CE1 /* AppDelegate.m */,
-				ECB9548C1C975D7200C82CE1 /* ViewController.h */,
-				ECB9548D1C975D7200C82CE1 /* ViewController.m */,
 				ECB9548F1C975D7200C82CE1 /* Main.storyboard */,
 				ECB954921C975D7200C82CE1 /* Assets.xcassets */,
 				ECB954941C975D7200C82CE1 /* LaunchScreen.storyboard */,
@@ -211,8 +211,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ECB9548E1C975D7200C82CE1 /* ViewController.m in Sources */,
 				ECB9548B1C975D7200C82CE1 /* AppDelegate.m in Sources */,
+				ECB954BF1C986BF400C82CE1 /* ContactsViewController.m in Sources */,
 				ECB954881C975D7200C82CE1 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -400,6 +400,7 @@
 				ECB954A71C975D7200C82CE1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ECB954A81C975D7200C82CE1 /* Build configuration list for PBXNativeTarget "ContactsTests" */ = {
 			isa = XCConfigurationList;
@@ -408,6 +409,7 @@
 				ECB954AA1C975D7200C82CE1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
