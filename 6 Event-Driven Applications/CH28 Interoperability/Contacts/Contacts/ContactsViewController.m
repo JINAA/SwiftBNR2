@@ -20,7 +20,7 @@
 
 - (id) initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
-    if (self) {  
+    if (self) {
         _contacts = [NSMutableArray array];
     }
     return self;
@@ -70,15 +70,29 @@
     
     if (firstName.length != 0 || lastName.length != 0) {
         NSString *contactName = [NSString stringWithFormat:@"%@ %@", firstName, lastName];
-        
-        Contact *newContact = [[Contact alloc] initWithContactName:contactName];
-        [self.contacts addObject:newContact];
-        [self.tableView reloadData];
+        [self addContactToContacts:contactName];
     }
 }
 
 - (IBAction)cancelToViewExistingContact:(UIStoryboardSegue *)segue {
+}
+
+- (IBAction)updateExistingContact:(UIStoryboardSegue *)segue {
     
+    ExistingContactViewController *existingContactVC = segue.sourceViewController;
+    NSString *name = existingContactVC.name.text;
+    Contact *existingContact = existingContactVC.contact;
+    
+    if (name.length != 0) {
+        [self.contacts removeObjectIdenticalTo:existingContact];
+        [self addContactToContacts:name];
+    }
+}
+
+- (void)addContactToContacts:(NSString *)name {
+    Contact *newContact = [[Contact alloc] initWithContactName: name];
+    [self.contacts addObject:newContact];
+    [self.tableView reloadData];
 }
 
 @end

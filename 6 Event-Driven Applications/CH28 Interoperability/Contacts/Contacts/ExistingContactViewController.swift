@@ -16,7 +16,7 @@ class ExistingContactViewController: UIViewController {
         }
     }
     
-    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var name: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,5 +28,15 @@ class ExistingContactViewController: UIViewController {
         if let contact = self.contact {
             name?.text = contact.name
         }
+    }
+    
+    @IBAction func backgroundTapped(sender: UIControl) {
+        view.endEditing(true)
+    }
+}
+
+extension ExistingContactViewController: UITextFieldDelegate {
+    func textFieldDidEndEditing(textField: UITextField) {
+        print(textField.text)
     }
 }
