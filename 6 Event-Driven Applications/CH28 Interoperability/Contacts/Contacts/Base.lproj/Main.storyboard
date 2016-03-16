@@ -42,6 +42,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="Cr1-1U-KeA" kind="show" identifier="toViewContact" id="xEE-sm-DIz"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qil-hD-YTy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -136,6 +139,62 @@
             </objects>
             <point key="canvasLocation" x="1192" y="-12"/>
         </scene>
+        <!--View Contact-->
+        <scene sceneID="he7-ZN-9jq">
+            <objects>
+                <viewController id="pPm-HG-g5a" customClass="ExistingContactViewController" customModule="Contacts" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Vmr-xV-ycW"/>
+                        <viewControllerLayoutGuide type="bottom" id="8q8-fW-iga"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4QO-2j-BQp">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="clv-x5-eHM">
+                                <rect key="frame" x="20" y="72" width="560" height="20"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Name:  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QWI-k8-o1p">
+                                        <rect key="frame" x="0.0" y="0.0" width="59" height="20"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qTv-ET-ih9">
+                                        <rect key="frame" x="59" y="0.0" width="501" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="9V2-ad-sSl"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="clv-x5-eHM" firstAttribute="leading" secondItem="4QO-2j-BQp" secondAttribute="leadingMargin" id="Ppw-al-5WI"/>
+                            <constraint firstItem="clv-x5-eHM" firstAttribute="trailing" secondItem="4QO-2j-BQp" secondAttribute="trailingMargin" id="USc-d0-tnt"/>
+                            <constraint firstItem="clv-x5-eHM" firstAttribute="top" secondItem="Vmr-xV-ycW" secondAttribute="bottom" constant="8" id="WCj-Wz-Kgn"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="View Contact" id="Z23-wK-jcR">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="hmf-2q-1oe">
+                            <connections>
+                                <segue destination="RML-uf-JbB" kind="unwind" unwindAction="cancelToViewExistingContact:" id="pOH-PI-b66"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="name" destination="qTv-ET-ih9" id="WzK-sR-gGR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hnl-Yr-J6s" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="RML-uf-JbB" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1192" y="764"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="Fjs-Ig-lsz">
             <objects>
@@ -153,6 +212,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B5h-3R-KCs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="380" y="-12"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="xHJ-kg-HOY">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Cr1-1U-KeA" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="nmV-xs-Wyz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="pPm-HG-g5a" kind="relationship" relationship="rootViewController" id="7UY-od-uCd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3sQ-25-oBj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="380" y="764"/>
         </scene>
     </scenes>
 </document>

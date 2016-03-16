@@ -12,6 +12,7 @@
 @interface ContactsViewController ()
 
 @property (nonatomic, readonly, strong) NSMutableArray *contacts;
+@property (nonatomic, weak) Contact *contact;
 
 @end
 
@@ -42,6 +43,22 @@
     return cell;
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([segue.identifier isEqualToString: @"toViewContact"]) {
+        
+        UINavigationController *nav = (UINavigationController *)segue.destinationViewController;
+        ExistingContactViewController *controller = (ExistingContactViewController*) nav.topViewController;
+        controller.contact = self.contact;
+    }
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    self.contact = self.contacts[indexPath.row];
+    [self performSegueWithIdentifier:@"toViewContact"
+                              sender:self];
+}
+
 - (IBAction)cancelToContactsViewController:(UIStoryboardSegue *)segue {
     // No action to take if user cancels
 }
@@ -58,6 +75,10 @@
         [self.contacts addObject:newContact];
         [self.tableView reloadData];
     }
+}
+
+- (IBAction)cancelToViewExistingContact:(UIStoryboardSegue *)segue {
+    
 }
 
 @end

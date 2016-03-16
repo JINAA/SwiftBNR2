@@ -17,6 +17,7 @@
 		ECB954C21C98729800C82CE1 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB954C11C98729800C82CE1 /* Contact.swift */; };
 		ECB954C41C98744900C82CE1 /* NewContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB954C31C98744900C82CE1 /* NewContactViewController.swift */; };
 		ECB954C71C987EBC00C82CE1 /* DefaultImage.m in Sources */ = {isa = PBXBuildFile; fileRef = ECB954C61C987EBB00C82CE1 /* DefaultImage.m */; };
+		ECB954C91C989DE800C82CE1 /* ExistingContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB954C81C989DE800C82CE1 /* ExistingContactViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		ECB954C31C98744900C82CE1 /* NewContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewContactViewController.swift; sourceTree = "<group>"; };
 		ECB954C51C987EBB00C82CE1 /* DefaultImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultImage.h; sourceTree = "<group>"; };
 		ECB954C61C987EBB00C82CE1 /* DefaultImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefaultImage.m; sourceTree = "<group>"; };
+		ECB954C81C989DE800C82CE1 /* ExistingContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExistingContactViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 		ECB954851C975D7200C82CE1 /* Contacts */ = {
 			isa = PBXGroup;
 			children = (
+				ECB954C81C989DE800C82CE1 /* ExistingContactViewController.swift */,
 				ECB954C51C987EBB00C82CE1 /* DefaultImage.h */,
 				ECB954C61C987EBB00C82CE1 /* DefaultImage.m */,
 				ECB954C31C98744900C82CE1 /* NewContactViewController.swift */,
@@ -227,6 +230,7 @@
 				ECB954C21C98729800C82CE1 /* Contact.swift in Sources */,
 				ECB954C41C98744900C82CE1 /* NewContactViewController.swift in Sources */,
 				ECB9548B1C975D7200C82CE1 /* AppDelegate.m in Sources */,
+				ECB954C91C989DE800C82CE1 /* ExistingContactViewController.swift in Sources */,
 				ECB954BF1C986BF400C82CE1 /* ContactsViewController.m in Sources */,
 				ECB954881C975D7200C82CE1 /* main.m in Sources */,
 				ECB954C71C987EBC00C82CE1 /* DefaultImage.m in Sources */,
